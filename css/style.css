@@ -1,0 +1,500 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+
+.navigatiebar{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: black;
+    font-family: myFirstFont;
+    
+}
+
+header > a{
+    padding-left: 3rem;
+}
+
+nav{
+    padding-right: 3rem;
+    flex: 1;
+    text-align: right;
+    
+}
+
+.links{
+    display: inline-block;
+    list-style-type: none;
+}
+
+.links > li{
+    display: inline-block;
+    margin-right: 3rem;
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+a:hover{
+    color: lightblue;
+}
+
+p{
+    color: white;
+}
+
+/* Header */
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 30rem;
+}
+
+.col-2 > img{
+    max-width: 100%;
+
+}
+
+.afbeelding{
+    max-width: 110rem;
+    margin: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+body{
+    color: white;
+    font-size: 2rem;
+    background: #090721;
+    
+}
+
+
+/*Trending games */
+
+.game{
+    padding: 5rem;
+}
+
+.gametitel{
+    color: white;
+    font-weight: 40rem;
+    margin-bottom: 4rem;
+}
+
+.gamelijst{
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.gamelijstitem{
+    width: 30rem;
+    height: 50rem;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+.gamelijstitem > a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+/* tekst op images */
+.text-block {
+    bottom: 20px;
+    right: 20px;
+    background: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    border-radius: 0.5rem;
+}
+
+
+/* ------------gamepaginas------------ */
+.gamelijstitem > img{
+    width: 100%;
+    height: 100%;
+    object-fit:scale-down
+}
+
+
+.block{
+    width: 30rem;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.block > h5{
+    padding-top: 2rem;
+}
+
+.block > p{
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+}
+
+
+span{ /* prijs */
+    padding-right: 3rem;
+}
+
+/* ------------Button style voor kopen------------ */
+.glow-on-hover {
+    width: 150px;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2Fa4FF,#00FFDD);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+
+/* ------------Hover effect voor afbeeldingen------------ */
+.product{
+    border-radius: 0.5rem;
+    transition: 0.2s transform;
+}
+
+.product:hover{
+    transform: scale(1.05);
+}
+
+/* ------------betaalmogelijkheden------------ */
+.betaal{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+/* ------------Gamepagina Slideshow------------ */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100rem;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -2.2rem;
+  padding: 1.6rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  transition: 0.6s ease;
+  border-radius: 0 0.3rem 0.3rem 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  position: absolute;
+  top: 0;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* ------------reviews------------- */
+
+.section--third{
+    background: #090721;
+    display: flex;
+    height: auto;
+    padding: 4rem;
+    align-items: center;
+}
+
+.arrow{
+    width: 10%;
+    color: white;
+    background: #090721;
+    font-size: 300%;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.reviews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.review{
+    width: 30rem;
+    min-height: 20rem;
+    background: darkred;
+    list-style: none;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    background: black;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.5), 
+    inset 0 -1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+}
+
+.review:nth-of-type(4), .review:nth-of-type(5), .review:nth-of-type(6){
+    display: none;
+}
+.quote{
+    font-size: 500%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    line-height: 0.5;
+}
+
+.stars{
+    color: gold;
+}
+
+
+.review p{
+    font-size: 65%;
+    font-style: italic;
+    padding-bottom: 2rem;
+    border-bottom: 0.5rem solid rgba(0, 0, 0, 0.2);
+}
+
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+@media screen and (max-width: 50rem){
+    .arrow{
+        display: none;
+    }
+    .reviews{
+        width:100%;
+    }
+}
+
+/* ------------footer------------ */
+footer {
+    background-color: black;
+    padding: 3rem 0;
+    color: white;
+  }
+  
+  footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer__section {
+    padding: 2rem;
+  }
+  
+  .footer__section div {
+    font-weight: bold;
+  }
+  
+  .footer__section ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 0.2rem;
+  }
+  
+  .footer__section ul li {
+    line-height: 2rem;
+    color: white;
+  }
+  
+  .footer__section ul li a {
+    color: white;
+    text-decoration: none;
+    
+  }
+  .footer__section ul li a:hover {
+    color: lightblue;
+  }
+
+  .footer__section > ul iframe{
+      padding-top: 1rem;
+  }
+/* ------------contactform------------ */
+form{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 1.5rem;
+    gap: 0.8rem;
+}
+
+form label{
+    border-bottom: 1px solid grey;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+input{
+    display: block;
+    width: 30ch;
+    padding: 1rem 2rem;
+    background: #EEEEEE;
+}
+
+textarea{
+    height: 15ch;
+}
+
+.submit{
+    background: grey;
+    font-size: 1.45rem;
+    border: none;
+}
+
+.submit:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+    footer .container {
+      flex-direction: column;
+    }
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(/fonts/Galaxy\ Girl\ Slant.otf);
+}
+
+  
