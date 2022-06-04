@@ -2,10 +2,9 @@
 require 'functions.php';
 $connection = dbConnect();
 
-$result = $connection ->query('SELECT * FROM `games`')
+$result = $connection->query('SELECT * FROM `games`')
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -16,47 +15,47 @@ $result = $connection ->query('SELECT * FROM `games`')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamepagina</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/filter.js" defer></script>
 </head>
 
 <body>
     <header class="navigatiebar">
-        <a href="index.html">
+        <a href="index.php">
             <img src="img/LogoSWGames.webp" width="150" alt="Star Wars Games Logo">
-        <nav>
-            <ul class="links">
-                <li><a href="games.html">Games</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Inloggen.html">Inloggen</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="links">
+                    <li><a href="index.php">Games</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="inloggen.html">Inloggen</a></li>
+                </ul>
+            </nav>
     </header>
 
     <main>
         <section class="afbeelding">
             <div class="col-2">
-                <img src="img/1087325.webp" alt="Darthvader afbeelding">
+                <img src="img/1087325.webp" alt="Darthvader afbeelding" class="image1">
+                <img src="img/Gamepagina.webp" alt="Logo" class="image2">
             </div>
         </section>
+
+        <section class="game">
+            <h2 class="gametitel">Games</h2>
+            <ul class="gamelijst">
+
+                <?php foreach ($result as $row) : ?>
+                    <li class="gamelijstitem" data-category="<?php echo $row['categorie']?>">
+                        <div class="text-block">
+                            <h3>€<?php echo $row['prijs'] ?></h3>
+                        </div>
+                        <a href="game.php?id=<?php echo $row['id'] ?>">
+                            <img src="img/games/<?php echo $row['foto'] ?>" alt="<?php echo $row['afbeeldinginformatie'] ?>" class="product">
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
     </main>
-
-    <section class="game">
-        <h2 class="gametitel">Games</h2>
-        <ul class="gamelijst">
-
-        <?php foreach($result as $row):?>
-            <li class="gamelijstitem">  
-                <a href="<?php echo $row['bestandsnaam']?>">
-                    <div class="text-block">
-                        <h3>€<?php echo $row['prijs']?></h3>
-                    </div>
-                    <img src="img/games/<?php echo $row['foto']?>" alt="<?php echo $row['afbeeldinginformatie'] ?>" class="product">
-                </a>
-            </li>
-        <?php endforeach; ?>
-        </ul>
-    </section>
-
     <footer>
         <div class="container">
             <div class="footer__section">
@@ -71,8 +70,8 @@ $result = $connection ->query('SELECT * FROM `games`')
                 <h3>Navigatie</h3>
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
-                    <li><a href="games.html">Games</a></li>
-                    <li><a href="Inloggen.html">Inloggen</a></li>
+                    <li><a href="games.php">Games</a></li>
+                    <li><a href=inloggen.html">Inloggen</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -114,4 +113,5 @@ $result = $connection ->query('SELECT * FROM `games`')
         </div>
     </footer>
 </body>
+
 </html>
