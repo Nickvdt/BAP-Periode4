@@ -102,7 +102,7 @@ body{
 
 /*Trending games */
 
-.game{
+.game, .contact{
     padding: 5rem;
 }
 
@@ -112,14 +112,14 @@ body{
     margin-bottom: 4rem;
 }
 
-.gamelijst{
+.gamelijst, .contactlijst{
     list-style: none;
     display: flex;
     gap: 4rem;
     flex-wrap: wrap;
 }
 
-.gamelijstitem{
+.gamelijstitem, .contactlijstitem{
     width: 30rem;
     height: 50rem;
     flex-shrink: 1;
@@ -482,7 +482,56 @@ footer {
       padding-top: 1rem;
   }
 /* ------------contactform------------ */
-form{
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.form__field > div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form__field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form__field input{
+    display: block;
+    width: 60ch;
+    padding: 1rem 2rem;
+    background: #EEEEEE;
+    border-radius: 1rem;
+    
+}
+.form__field textarea {
+    height: 25ch;
+    width: 60ch;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.form__button {
+    width: 60ch;
+    height: 3rem;
+    background: linear-gradient(#2Fa4FF,#00FFDD);
+    color: white;
+    border-radius: 1rem;
+}
+
+.contactlijstitem > img{
+    width: 100%;
+    height: 70%;
+    object-fit:scale-down
+}
+
+/* --- footerform --- */
+.footer__form{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -490,28 +539,30 @@ form{
     gap: 0.8rem;
 }
 
-form label{
+.footer__form > div > label{
     border-bottom: 1px solid grey;
 }
 
-form div{
+.footer__form > div{
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
 }
 
-input{
+.footer__form > div > input{
     display: block;
     width: 30ch;
     padding: 1rem 2rem;
     background: #EEEEEE;
 }
 
-textarea{
+.footer__form > div > textarea{
     height: 15ch;
+    padding: 1rem 2rem;
 }
 
 .submit{
+    height: 3rem;
     background: grey;
     font-size: 1.45rem;
     border: none;
@@ -520,6 +571,26 @@ textarea{
 .submit:hover{
     cursor: pointer;
 }
+
+
+.bedanktContainer {
+    padding: 10rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+.form-error{
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+
+
 
 @media screen and (max-width: 680px) {
     footer .container {

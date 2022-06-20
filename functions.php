@@ -20,4 +20,26 @@ function dbConnect()
         exit;
     }
 }
+
+function isEmpty($value){
+    return empty($value);
+}
+
+function isvalidEmail($value){
+    $cleaned = filter_var($value, FILTER_SANITIZE_EMAIL);
+    if($cleaned == false){
+        return false;
+    }
+
+    return filter_var($cleaned, FILTER_VALIDATE_EMAIL);
+}
+
+function hasMinLength($value, $min_length)
+{
+    $length = strlen($value);
+    if ($length >= $min_length) {
+        return true;
+    }
+    return false;
+}
 ?>

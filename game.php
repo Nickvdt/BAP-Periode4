@@ -41,7 +41,7 @@ $games = $statement->fetch(PDO::FETCH_ASSOC)
             <nav>
                 <ul class="links">
                     <li><a href="index.php">Games</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="inloggen.html">Inloggen</a></li>
                     <li><a href="zoeken.html">Zoeken</a></li>
                 </ul>
